@@ -42,7 +42,7 @@
 ;;; Code:
 (defgroup copyit nil
   "Copy it!"
-  :group 'convinience)
+  :group 'convenience)
 
 (defcustom copyit-binary-file-copy-method 'data-uri
   "Default copy method for binary file."
