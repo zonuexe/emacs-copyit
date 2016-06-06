@@ -1,4 +1,7 @@
 * [Emacs] Copy it, yank anything!
+
+=copyit.el= is Emacs Lisp package for [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Yanking.html][Yanking]] / Clipboard [[https://www.emacswiki.org/emacs/CopyAndPaste][Copy And Paste]].
+
 ** Functions
 *** =copyit.el=
 - =copyit-file-pathname= :: Copy file pathname.
@@ -6,6 +9,9 @@
 - =copyit-file-exif-information= :: Copy [[https://en.wikipedia.org/wiki/Exchangeable_image_file_format][Exif]] information. (require [[http://www.imagemagick.org/script/index.php][ImageMagick]] =identify= command)
 - =copyit-file-as-data-uri= :: Copy file content as [[https://en.wikipedia.org/wiki/Data_URI_scheme][Data URI]].
 - =copyit-ssh= :: Copy file content in =~/.ssh/= directory.
+*** =copyit-pandoc.el=
+*** =pandoc.el=
+
 ** Customize
 *** =copyit-binary-file-copy-method=
 Binary file copy method in =copyit-file-content=.
