@@ -91,12 +91,7 @@
   "Return buffer by `FILE-PATH-OR-BUFFER'."
   (if (bufferp file-path-or-buffer)
       file-path-or-buffer
-    (or (get-file-buffer file-path-or-buffer)
-        (let* ((truename (file-truename file-path-or-buffer))
-               (attributes (file-attributes truename))
-               (number (nthcdr 10 attributes)))
-          (find-file-noselect-1 (create-file-buffer file-path-or-buffer)
-                                file-path-or-buffer nil nil truename number)))))
+    (find-file-noselect file-path-or-buffer)))
 
 (defun copyit--get-mime-type (file-path-or-buffer)
   "Get MIME content type by `FILE-PATH-OR-BUFFER'."
