@@ -2,6 +2,8 @@
 
 =copyit.el= is Emacs Lisp package for [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Yanking.html][Yanking]] / Clipboard [[https://www.emacswiki.org/emacs/CopyAndPaste][Copy And Paste]].
 
+=pandoc.el= is a simple interface for [[http://pandoc.org/][Pandoc]].
+
 ** Functions
 *** =copyit.el=
 - =copyit-file-pathname= :: Copy file pathname.
@@ -10,7 +12,10 @@
 - =copyit-file-as-data-uri= :: Copy file content as [[https://en.wikipedia.org/wiki/Data_URI_scheme][Data URI]].
 - =copyit-ssh= :: Copy file content in =~/.ssh/= directory.
 *** =copyit-pandoc.el=
-*** =pandoc.el=
+
+** =pandoc.el=
+*** =pandoc-open-eww=
+Render file using [[https://www.gnu.org/software/emacs/manual/html_node/eww/index.html#Top][Emacs Web Wowser]] and Pandoc.  Pandoc supports many format (includes [[https://en.wikipedia.org/wiki/EPUB][EPUB]], [[https://en.wikipedia.org/wiki/Office_Open_XML][docx]], [[https://en.wikipedia.org/wiki/Markdown][Markdown]] and [[http://orgmode.org/][Org mode]]).
 
 ** Customize
 *** =copyit-binary-file-copy-method=
