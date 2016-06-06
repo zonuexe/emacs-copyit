@@ -6,7 +6,7 @@
 ;; Created: 6 Jun 2016
 ;; Version: 0.0.1
 ;; Keywords: convinience yank clipboard
-;; Homepage: https://github.com/zonuexe/copyit
+;; Homepage: https://github.com/zonuexe/emacs-copyit
 ;; Package-Requires: ((emacs "24"))
 
 ;; This file is NOT part of GNU Emacs.
