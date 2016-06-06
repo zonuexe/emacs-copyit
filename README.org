@@ -5,13 +5,20 @@
 ** Functions
 *** =copyit.el=
 
-| commands                           | description                                                     |
+| command                            | description                                                     |
 |------------------------------------+-----------------------------------------------------------------|
 | =M-x copyit-file-pathname=         | Copy file pathname.                                             |
 | =M-x copyit-file-content=          | Copy file content.                                              |
 | =M-x copyit-file-exif-information= | Copy [[https://en.wikipedia.org/wiki/Exchangeable_image_file_format][Exif]] information. (require [[http://www.imagemagick.org/script/index.php][ImageMagick]] =identify= command) |
 | =M-x copyit-file-as-data-uri=      | Copy file content as [[https://en.wikipedia.org/wiki/Data_URI_scheme][Data URI]].                                  |
 | =M-x copyit-ssh=                   | Copy file content in =~/.ssh/= directory.                       |
+
+*** =copyit-pandoc.el=
+
+| command                                 | description                       |
+|-----------------------------------------+-----------------------------------|
+| =M-x =copyit-pandoc-export-to-html=     | Convert and Copy file as HTML     |
+| =M-x =copyit-pandoc-export-to-markdown= | Convert and Copy file as Markdown |
 
 ** Customize
 *** =copyit-binary-file-copy-method=
