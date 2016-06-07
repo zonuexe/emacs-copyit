@@ -7,7 +7,7 @@
 ;; Version: 0.0.1
 ;; Keywords: convinience yank clipboard
 ;; Homepage: https://github.com/zonuexe/emacs-copyit
-;; Package-Requires: ((emacs "24"))
+;; Package-Requires: ((emacs "24") (cl-lib "0.5"))
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -40,9 +40,12 @@
 ;; - copyit-ssh-directory-path
 
 ;;; Code:
+
+(require 'cl-lib)
+
 (defgroup copyit nil
   "Copy it!"
-  :group 'convinience)
+  :group 'convenience)
 
 (defcustom copyit-binary-file-copy-method 'data-uri
   "Default copy method for binary file."
