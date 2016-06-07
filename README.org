@@ -4,6 +4,10 @@
 
 ** Functions
 *** =copyit.el=
+#+BEGIN_HTML
+<a href="http://melpa.org/#/copyit"><img alt="MELPA: copyit" src="http://melpa.org/packages/copyit-badge.svg"></a>
+<a href="http://stable.melpa.org/#/copyit"><img alt="MELPA stable: copyit" src="http://stable.melpa.org/packages/copyit-badge.svg"></a>
+#+END_HTML
 
 | command                            | description                                                     |
 |------------------------------------+-----------------------------------------------------------------|
@@ -14,11 +18,15 @@
 | =M-x copyit-ssh=                   | Copy file content in =~/.ssh/= directory.                       |
 
 *** =copyit-pandoc.el=
+#+BEGIN_HTML
+<a href="http://melpa.org/#/copyit-pandoc"><img alt="MELPA: copyit-pandoc" src="http://melpa.org/packages/copyit-pandoc-badge.svg"></a>
+<a href="http://stable.melpa.org/#/copyit-pandoc"><img alt="MELPA stable: copyit-pandoc" src="http://stable.melpa.org/packages/copyit-pandoc-badge.svg"></a>
+#+END_HTML
 
-| command                                 | description                       |
-|-----------------------------------------+-----------------------------------|
-| =M-x =copyit-pandoc-export-to-html=     | Convert and Copy file as HTML     |
-| =M-x =copyit-pandoc-export-to-markdown= | Convert and Copy file as Markdown |
+| command                                | description                       |
+|----------------------------------------+-----------------------------------|
+| =M-x copyit-pandoc-export-to-html=     | Convert and Copy file as HTML     |
+| =M-x copyit-pandoc-export-to-markdown= | Convert and Copy file as Markdown |
 
 ** Customize
 *** =copyit-binary-file-copy-method=
