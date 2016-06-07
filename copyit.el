@@ -107,8 +107,7 @@
         (call-process-region (point-min) (point-max)
                              "file" nil buf nil "-b" "--mime-type" "--" "-"))
       (goto-char (point-min))
-      (search-forward "
-")
+      (search-forward "\n")
       (replace-match  "")
       (buffer-substring-no-properties (point-min) (point-max)))))
 
