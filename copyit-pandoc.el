@@ -39,13 +39,23 @@
 ;;;###autoload
 (defun copyit-pandoc-export-to-html (file-path)
   "Convert and Copy `FILE-PATH' file as HTML."
-  (interactive "F")
+  (interactive "p")
+  (cond
+   ((null file-path)
+    (setq file-path (read-file-name "")))
+   ((and (equal 4 file-path) buffer-file-name)
+    (setq file-path buffer-file-name)))
   (kill-new (pandoc-convert-file file-path nil "html")))
 
 ;;;###autoload
 (defun copyit-pandoc-export-to-markdown (file-path)
   "Convert and Copy `FILE-PATH' file as Markdown."
-  (interactive "F")
+  (interactive "p")
+  (cond
+   ((null file-path)
+    (setq file-path (read-file-name "")))
+   ((and (equal 4 file-path) buffer-file-name)
+    (setq file-path buffer-file-name)))
   (kill-new (pandoc-convert-file file-path nil (pandoc-markdown-dialect))))
 
 (provide 'copyit-pandoc)
