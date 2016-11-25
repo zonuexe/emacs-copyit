@@ -5,9 +5,9 @@
 ;; Author: USAMI Kenta <tadsan@zonu.me>
 ;; Created: 6 Jun 2016
 ;; Version: 0.0.1
-;; Keywords: convinience yank clipboard
+;; Keywords: convenience yank clipboard
 ;; Homepage: https://github.com/zonuexe/emacs-copyit
-;; Package-Requires: ((emacs "24") (cl-lib "0.5"))
+;; Package-Requires: ((emacs "24") (cl-lib "0.5") (s "1.9.0"))
 
 ;; This file is NOT part of GNU Emacs.
 
