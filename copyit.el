@@ -29,6 +29,7 @@
 ;; “Copy” is known as “Yank” in Emacs.
 ;;
 ;; ** Functions
+;; - copyit-variable
 ;; - copyit-file-pathname
 ;; - copyit-file-content
 ;; - copyit-file-exif-information
@@ -38,10 +39,12 @@
 ;; ** Customize
 ;; - copyit-binary-file-copy-method
 ;; - copyit-ssh-directory-path
+;; - copyit-copy-bare-string
 
 ;;; Code:
 
 (require 'cl-lib)
+(require 's)
 
 (defgroup copyit nil
   "Copy it!"
@@ -56,6 +59,9 @@
 
 (defcustom copyit-ssh-directory-path "~/.ssh/"
   "Directory path string for SSH.")
+
+(defcustom copyit-copy-bare-string t
+  "Copy non-quoted string value if T when interactively called.")
 
 (defun copyit--copy-binary-file (buffer)
   "Copy binary file content by `BUFFER'."
@@ -110,6 +116,23 @@
       (search-forward "\n")
       (replace-match  "")
       (buffer-substring-no-properties (point-min) (point-max)))))
+
+(defun copyit--pp-string (value bare-string)
+  "Get pretty-printed string VALUE.
+Return non-quoted string VALUE if `BARE-STRING' is non-NIL."
+  (if (and bare-string (stringp value))
+      value
+    (s-trim-right (pp-to-string (if (listp value) `(quote ,value) value)))))
+
+;;;###autoload
+(defun copyit-variable (symbol &optional flip-bare-string)
+  "Copy pretty-printed value `SYMBOL's variable.
+Copy quoted string if `FLIP-BARE-STRING' is non-NIL."
+  (interactive
+   (list (cl-letf (((symbol-function 'custom-variable-p) #'boundp))
+           (read-variable "Variable: "))
+         (not (and copyit-copy-bare-string current-prefix-arg))))
+  (kill-new (copyit--pp-string (symbol-value symbol) flip-bare-string)))
 
 ;;;###autoload
 (defun copyit-file-pathname (file-path)

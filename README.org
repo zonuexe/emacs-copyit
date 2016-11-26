@@ -11,6 +11,7 @@
 
 | command                            | description                                                     |
 |------------------------------------+-----------------------------------------------------------------|
+| =M-x copyit-variable=              | Copy value of symbol's variable.                                |
 | =M-x copyit-file-pathname=         | Copy file pathname.                                             |
 | =M-x copyit-file-content=          | Copy file content.                                              |
 | =M-x copyit-file-exif-information= | Copy [[https://en.wikipedia.org/wiki/Exchangeable_image_file_format][Exif]] information. (require [[http://www.imagemagick.org/script/index.php][ImageMagick]] =identify= command) |
@@ -31,7 +32,9 @@
 =C-u M-x copyit-pandoc-export-to-html= and =C-u M-x copyit-pandoc-export-to-markdown= convert current buffer file.
 
 ** Customize
-*** =copyit-binary-file-copy-method=
+*** =copyit-binary-file-copy-method= (default: =data-uri=)
 Binary file copy method in =copyit-file-content=.
-*** =copyit-ssh-directory-path=
+*** =copyit-ssh-directory-path= (default: ="~/.ssh/"=)
 Path to your SSH directory.
+*** =copyit-copy-bare-string= (default: =t=)
+Copy bare (non-quoted) string when interactively called.  (="abc"= as =abc=)
