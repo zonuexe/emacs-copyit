@@ -1,4 +1,4 @@
-(package "copyit" "0.0.2" "Copy it, yank anything!")
+(package "copyit" "0.1.0" "Copy it, yank anything!")
 (source melpa)
 
 (package-file "copyit.el")
