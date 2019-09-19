@@ -1,13 +1,13 @@
-;;; copyit-pandoc.el --- Copy it, yank anything! -*- mode: lexical-binding: t -*-
+;;; copyit-pandoc.el --- Copy it, yank anything! -*- lexical-binding: t -*-
 
-;; Copyright (C) 2016 USAMI Kenta
+;; Copyright (C) 2019 USAMI Kenta
 
 ;; Author: USAMI Kenta <tadsan@zonu.me>
 ;; Created: 6 Jun 2016
 ;; Version: 0.0.1
-;; Keywords: convinience yank clipboard
+;; Keywords: convenience yank clipboard
 ;; Homepage: https://github.com/zonuexe/emacs-copyit
-;; Package-Requires: ((emacs "24") (copyit "0.0.1") (pandoc "0.0.1"))
+;; Package-Requires: ((emacs "24.3") (copyit "0.0.1") (pandoc "0.0.1"))
 
 ;; This file is NOT part of GNU Emacs.
 
