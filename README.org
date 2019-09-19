@@ -29,7 +29,7 @@
 | =M-x copyit-pandoc-export-to-html=     | Convert and Copy file as HTML     |
 | =M-x copyit-pandoc-export-to-markdown= | Convert and Copy file as Markdown |
 
-=C-u M-x copyit-pandoc-export-to-html= and =C-u M-x copyit-pandoc-export-to-markdown= convert current buffer file.
+=C-u M-x copyit-pandoc-export-to-html= and =C-u M-x copyit-pandoc-export-to-markdown= convert a file.  When =C-u= is prepended, the content of the current buffer is converted.
 
 ** Customize
 *** =copyit-binary-file-copy-method= (default: =data-uri=)
