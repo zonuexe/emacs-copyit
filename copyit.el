@@ -53,9 +53,9 @@
 
 (defcustom copyit-binary-file-copy-method 'data-uri
   "Default copy method for binary file."
-  :type '(choice (const :tag "Data URI" 'data-uri)
-                 (const :tag "Exif"     'exif)
-                 (const :tag "Base64"   'base64)
+  :type '(choice (const :tag "Data URI" data-uri)
+                 (const :tag "Exif"     exif)
+                 (const :tag "Base64"   base64)
                  (function-item)))
 
 (defcustom copyit-ssh-directory-path "~/.ssh/"
