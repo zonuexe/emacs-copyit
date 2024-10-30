@@ -69,7 +69,7 @@
   :group 'copyit)
 
 (defun copyit--copy-binary-file (buffer)
-  "Copy binary file content by `BUFFER'."
+  "Copy binary file content by BUFFER."
   (if (fboundp copyit-binary-file-copy-method)
       (funcall copyit-binary-file-copy-method buffer)
     (cl-case copyit-binary-file-copy-method
@@ -79,19 +79,19 @@
       (:else     (error "`%s' is unexpected method" copyit-binary-file-copy-method)))))
 
 (defun copyit--get-file-as-data-uri (buffer)
-  "Get Data URI format by `BUFFER'."
+  "Get Data URI format by BUFFER."
   (concat "data:"
           (copyit--get-mime-type buffer)
           ";base64,"
           (copyit--get-file-as-base64 buffer)))
 
 (defun copyit--get-file-as-base64 (buffer)
-  "Get Base64 encoded content by `BUFFER'."
+  "Get Base64 encoded content by BUFFER."
   (with-current-buffer buffer
     (base64-encode-string (buffer-substring-no-properties (point-min) (point-max)))))
 
 (defun copyit--get-file-as-exif-info (file-path-or-buffer)
-  "Get Exif informations by `FILE-PATH-OR-BUFFER'."
+  "Get Exif informations by FILE-PATH-OR-BUFFER."
   (unless (executable-find "identify")
     (error "`identify' command not exists"))
   (with-temp-buffer
@@ -102,13 +102,13 @@
       (buffer-substring-no-properties (point-min) (point-max)))))
 
 (defun copyit--get-buffer (file-path-or-buffer)
-  "Return buffer by `FILE-PATH-OR-BUFFER'."
+  "Return buffer by FILE-PATH-OR-BUFFER."
   (if (bufferp file-path-or-buffer)
       file-path-or-buffer
     (find-file-noselect file-path-or-buffer)))
 
 (defun copyit--get-mime-type (file-path-or-buffer)
-  "Get MIME content type by `FILE-PATH-OR-BUFFER'."
+  "Get MIME content type by FILE-PATH-OR-BUFFER."
   ;; require `file' command.
   (unless (executable-find "file")
     (error "`file' command not exists"))
@@ -124,15 +124,15 @@
 
 (defun copyit--pp-string (value bare-string)
   "Get pretty-printed string VALUE.
-Return non-quoted string VALUE if `BARE-STRING' is non-NIL."
+Return non-quoted string VALUE if BARE-STRING is non-NIL."
   (if (and bare-string (stringp value))
       value
     (s-trim-right (pp-to-string (if (listp value) `(quote ,value) value)))))
 
 ;;;###autoload
 (defun copyit-variable (symbol &optional flip-bare-string)
-  "Copy pretty-printed value `SYMBOL's variable.
-Copy quoted string if `FLIP-BARE-STRING' is non-NIL."
+  "Copy pretty-printed value SYMBOL\\='s variable.
+Copy quoted string if FLIP-BARE-STRING is non-NIL."
   (interactive
    (list (cl-letf (((symbol-function 'custom-variable-p) #'boundp))
            (read-variable "Variable: "))
@@ -141,13 +141,13 @@ Copy quoted string if `FLIP-BARE-STRING' is non-NIL."
 
 ;;;###autoload
 (defun copyit-file-pathname (file-path)
-  "Copy `FILE-PATH'."
+  "Copy FILE-PATH."
   (interactive "F")
   (kill-new file-path))
 
 ;;;###autoload
 (defun copyit-file-content (file-path)
-  "Copy `FILE-PATH' content."
+  "Copy FILE-PATH content."
   (interactive "F")
   (kill-new
    (with-current-buffer (copyit--get-buffer file-path)
@@ -157,13 +157,13 @@ Copy quoted string if `FLIP-BARE-STRING' is non-NIL."
 
 ;;;###autoload
 (defun copyit-file-exif-information (file-path)
-  "Copy exif-information by `FILE-PATH'."
+  "Copy exif-information by FILE-PATH."
   (interactive "F")
   (kill-new (copyit--get-file-as-exif-info file-path)))
 
 ;;;###autoload
 (defun copyit-file-as-data-uri (file-path)
-  "Copy `FILE-PATH' content as Data URI format."
+  "Copy FILE-PATH content as Data URI format."
   (interactive "F")
   (kill-new (copyit--get-file-as-data-uri file-path)))
 
